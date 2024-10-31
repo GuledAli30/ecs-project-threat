@@ -6,6 +6,7 @@ WORKDIR /app
 
 # This command copies your package.json and package-lock.json files from your local machine to the container. These files define the dependencies your app needs.
 COPY package*.json ./
+COPY yarn.lock ./ 
 
 # installs your app’s dependencies inside the container using npm install. This ensures that when the container runs, all necessary Node.js modules are available.
 RUN yarn install
